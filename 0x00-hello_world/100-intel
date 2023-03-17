@@ -1,0 +1,2 @@
+#!/bin/bash
+outfile=$CFILE; outfile=${outfile/c/s}; gcc -S "$CFILE" -o "$outfile"
