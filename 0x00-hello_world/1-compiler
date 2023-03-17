@@ -1,2 +1,2 @@
 #!/bin/bash
-outfile=$CFILE; outfile=${outfile/c/o}; echo "$outfile"; gcc -c "$CFILE" -o "$outfile"
+outfile=$CFILE; outfile=${outfile/c/o}; gcc -c "$CFILE" -o "$outfile"
