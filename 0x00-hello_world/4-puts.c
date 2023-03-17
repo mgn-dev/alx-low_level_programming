@@ -1,6 +1,9 @@
 #include <stdio.h>
 
-/*Prints out a string to standard output using the 'put' function*/
+/**
+* main - Short prints line using put single
+* Return: null
+*/
 int main(void)
 {
 	char str[] = "\"Programming is like building a multilingual puzzle";
