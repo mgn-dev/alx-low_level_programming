@@ -9,7 +9,7 @@
 int main(void)
 {
 	const char *str1 = "and that piece of art is useful\"";
-	const char *str2 = " - Dora Korpar, 2016-10-19\n";
+	const char *str2 = " - Dora Korpar, 2015-10-19\n";
 	int str1_size = strlen(str1);
 	int str2_size = strlen(str2);
 
