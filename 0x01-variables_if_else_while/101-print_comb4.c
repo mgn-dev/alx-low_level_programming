@@ -28,9 +28,10 @@ int main(void)
 					putchar(32);
 				}
 			}
+			q++;
 		}
-		q++;
 		p++;
+		q = p + 1;
 	}
 	putchar(10);
 	return (0);
