@@ -1,4 +1,5 @@
-#include <stdio.h>
+#include <string.h>
+#include <unistd.h>
 
 /**
 * main - prints a string to the standard error.
@@ -7,7 +8,12 @@
 */
 int main(void)
 {
-	fprintf(stderr, "and that piece of art is useful\" - Dora Korpar,");
-	fprintf(stderr, " 2016-10-19\n");
+	const char *str1 = "and that piece of art is useful\"";
+	const char *str2 = " - Dora Korpar, 2016-10-19\n";
+	int str1_size = strlen(str1);
+	int str2_size = strlen(str2);
+
+	write(2, str1, str1_size);
+	write(2, str2, str2_size);
 	return (1);
 }
