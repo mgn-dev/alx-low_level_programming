@@ -1,4 +1,5 @@
 extern int _putchar(char c);
+
 /**
 * print_alphabet - prints the alphabet, in lowercase, followed by a new line.
 *
