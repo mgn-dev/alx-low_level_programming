@@ -1,4 +1,5 @@
-#include "main.h"
+#include "_putchar.c"
+
 /**
 * print_alphabet - prints the alphabet, in lowercase, followed by a new line.
 *
@@ -14,4 +15,15 @@ void print_alphabet(void)
 		_putchar(arr[i]);
 	}
 	_putchar('\n');
+}
+
+/**
+* main - runs the print_alphabet function
+*
+*Return: null
+*/
+int main(void)
+{
+	print_alphabet();
+	return (0);
 }
