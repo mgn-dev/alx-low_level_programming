@@ -1,5 +1,4 @@
 extern int _putchar(char c);
-
 /**
 * print_alphabet - prints the alphabet, in lowercase, followed by a new line.
 *
@@ -7,12 +6,11 @@ extern int _putchar(char c);
 */
 void print_alphabet(void)
 {
-	char arr[] = "abcdefghijklmnopqrstuvwxyz";
+	char arr[] = "abcdefghijklmnopqrstuvwxyz\n";
 	int i;
 
-	for (i = 0; i < 26; i++)
+	for (i = 0; i < 27; i++)
 	{
 		_putchar(arr[i]);
 	}
-	_putchar('\n');
 }
