@@ -1,7 +1,7 @@
-#include "main.h"
+#include "1-alphabet.c"
 
 /**
-* main - check the code
+* main - run the print_alphabet function
 *
 * Return: Always 0.
 */

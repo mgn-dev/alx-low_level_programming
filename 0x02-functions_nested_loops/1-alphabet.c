@@ -1,5 +1,4 @@
-#include "_putchar.c"
-
+#include "main.h"
 /**
 * print_alphabet - prints the alphabet, in lowercase, followed by a new line.
 *
@@ -7,12 +6,12 @@
 */
 void print_alphabet(void)
 {
-	char i;
+	char arr[] = "abcdefghijklmnopqrstuvwxyz";
+	int i;
 
-	for (i = 97; i < 123; i++)
+	for (i = 0; i < 26; i++)
 	{
-		_putchar(i);
+		_putchar(arr[i]);
 	}
-	i = 10;
-	_putchar(i);
+	_putchar('\n');
 }
