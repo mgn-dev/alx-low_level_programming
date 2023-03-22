@@ -1,2 +1,1 @@
-extern int _putchar(char c);
-void jack_bauer(void);
+int add(int, int);
