@@ -1,4 +1,4 @@
-extern int _putchar(char c);
+#include "main.h"
 
 /**
 * times_table - prints every minute in a day

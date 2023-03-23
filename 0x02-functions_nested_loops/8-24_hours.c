@@ -1,4 +1,4 @@
-extern int _putchar(char c);
+#include "main.h"
 
 /**
 * jack_bauer - prints every minute in a day
@@ -7,46 +7,46 @@ extern int _putchar(char c);
 void jack_bauer(void)
 {
 	int i;
-	int j;
-	int k;
-	int l;
 
 	for (i = 0; i <= 2; i++)
 	{
 		if (i < 2)
 		{
-			for (j = 0; j <= 9; j++)
-			{
-				for (k = 0; k <= 5; k++)
-				{
-					for (l = 0; l <= 9; l++)
-					{
-						_putchar(i + '0');
-						_putchar(j + '0');
-						_putchar(':');
-						_putchar(k + '0');
-						_putchar(l + '0');
-						_putchar('\n');
-					}
-				}
-			}
+			clockwork(i, 9, 5, 9);
 		}
 		else
 		{
-			for (j = 0; j <= 3; j++)
+			clockwork(i, 3, 5, 9);
+		}
+	}
+}
+
+/**
+* clockwork - prints the values returned by i, j, k, l.
+* @i: 1st index
+* @o: 2nd index limit
+* @p: 3rd index limit
+* @q: 4th index limit
+*
+*/
+void clockwork(int i, int o, int p, int q)
+{
+	int j;
+	int k;
+	int l;
+
+	for (j = 0; j <= o; j++)
+	{
+		for (k = 0; k <= p; k++)
+		{
+			for (l = 0; l <= q; l++)
 			{
-				for (k = 0; k <= 5; k++)
-				{
-					for (l = 0; l <= 9; l++)
-					{
-						_putchar(i + '0');
-						_putchar(j + '0');
-						_putchar(':');
-						_putchar(k + '0');
-						_putchar(l + '0');
-						_putchar('\n');
-					}
-				}
+				_putchar(i + '0');
+				_putchar(j + '0');
+				_putchar(':');
+				_putchar(k + '0');
+				_putchar(l + '0');
+				_putchar('\n');
 			}
 		}
 	}

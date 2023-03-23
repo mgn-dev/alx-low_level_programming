@@ -1,4 +1,4 @@
-extern int _putchar(char c);
+#include "main.h"
 
 /**
 *print_alphabet_x10 - prints the alphabet 10 times, in lowercase,

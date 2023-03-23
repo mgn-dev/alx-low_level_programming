@@ -1,5 +1,4 @@
-extern int _putchar(char c);
-
+#include "main.h"
 /**
 * print_times_table - prints n times table
 * @n: the n to create a times table from

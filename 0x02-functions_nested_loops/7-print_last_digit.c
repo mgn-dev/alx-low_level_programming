@@ -1,4 +1,4 @@
-extern int _putchar(char c);
+#include "main.h"
 
 /**
 * print_last_digit - extract the last digit of an int
