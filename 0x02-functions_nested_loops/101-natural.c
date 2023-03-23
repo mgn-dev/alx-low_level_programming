@@ -14,12 +14,7 @@ void natural(int a, int b, int limit)
 
 	for (i = 0; i < limit; i++)
 	{
-		if (i % a == 0)
-		{
-			sum += i;
-		}
-
-		if (i % b == 0)
+		if (i % a == 0 || i % b == 0)
 		{
 			sum += i;
 		}
@@ -35,7 +30,6 @@ void natural(int a, int b, int limit)
 */
 int main(void)
 {
-	natural(3, 5, 10);
 	natural(3, 5, 1024);
 	return (0);
 }
