@@ -21,4 +21,6 @@ void print_to_98(int n);
 void result_printer(int result, int j);
 void print_times_table(int n);
 
+void natural(int a, int b, int limit);
+
 #endif
