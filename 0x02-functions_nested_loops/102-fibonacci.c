@@ -38,6 +38,7 @@ void fib(int n)
 				printf(", ");
 		}
 	}
+	printf("\n");
 }
 
 /**
