@@ -1,4 +1,5 @@
 #include "main.h"
+
 /**
 * print_times_table - prints n times table
 * @n: the n to create a times table from
@@ -17,41 +18,52 @@ void print_times_table(int n)
 			for (j = 0; j <= n; j++)
 			{
 				result = i * j;
-				if (result > 99)
-				{
-					if (j > 0)
-					{
-						_putchar(',');
-						_putchar(' ');
-					}
-					_putchar((result / 100) + '0');
-					_putchar(((result / 10) % 10) + '0');
-					_putchar((result % 10) + '0');
-				}
-				else if (result > 9)
-				{
-					if (j > 0)
-					{
-						_putchar(',');
-						_putchar(' ');
-						_putchar(' ');
-					}
-					_putchar((result / 10) + '0');
-					_putchar((result % 10) + '0');
-				}
-				else
-				{
-					if (j > 0)
-					{
-						_putchar(',');
-						_putchar(' ');
-						_putchar(' ');
-						_putchar(' ');
-					}
-					_putchar(result + '0');
-				}
+				result_printer(result, j);
 			}
 			_putchar('\n');
 		}
+	}
+}
+
+/**
+* result_printer - prints the result to standard output
+* @result: the value to print
+* @j: index
+*
+*/
+void result_printer(int result, int j)
+{
+	if (result > 99)
+	{
+		if (j > 0)
+		{
+			_putchar(',');
+			_putchar(' ');
+		}
+		_putchar((result / 100) + '0');
+		_putchar(((result / 10) % 10) + '0');
+		_putchar((result % 10) + '0');
+	}
+	else if (result > 9)
+	{
+		if (j > 0)
+		{
+			_putchar(',');
+			_putchar(' ');
+			_putchar(' ');
+		}
+		_putchar((result / 10) + '0');
+		_putchar((result % 10) + '0');
+	}
+	else
+	{
+		if (j > 0)
+		{
+			_putchar(',');
+			_putchar(' ');
+			_putchar(' ');
+			_putchar(' ');
+		}
+		_putchar(result + '0');
 	}
 }
