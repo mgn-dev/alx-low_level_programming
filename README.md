@@ -1,1 +1,1 @@
-# alx-low_level_programming
+This project consists of sub projects about low level programming tasks
