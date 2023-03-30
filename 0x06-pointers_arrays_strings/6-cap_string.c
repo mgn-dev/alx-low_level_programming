@@ -18,7 +18,7 @@ char *cap_string(char *s)
 		{
 			for (j = 0; j < 13; j++)
 			{
-				if (s[i - 1] == sep[j])
+				if (i > 1 && s[i - 1] == sep[j])
 					caps = 1;
 			}
 
