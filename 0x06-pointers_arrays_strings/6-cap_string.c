@@ -16,10 +16,20 @@ char *cap_string(char *s)
 	{
 		if (s[i] >= 'a' && s[i] <= 'z')
 		{
-			for (j = 0; j < 13; j++)
+			if (i == 0)
 			{
-				if (i > 1 && s[i - 1] == sep[j])
-					caps = 1;
+				caps = 1;
+			}
+			else
+			{
+				for (j = 0; j < 13; j++)
+				{
+					if (s[i - 1] == sep[j])
+					{
+						caps = 1;
+						break;
+					}
+				}
 			}
 
 			if (caps)
@@ -27,6 +37,12 @@ char *cap_string(char *s)
 				s[i] -= 32;
 				caps = 0;
 			}
+		}
+
+		if (caps)
+		{
+			s[i] -= 32;
+			caps = 0;
 		}
 
 		i++;
