@@ -39,12 +39,6 @@ char *cap_string(char *s)
 			}
 		}
 
-		if (caps)
-		{
-			s[i] -= 32;
-			caps = 0;
-		}
-
 		i++;
 	}
 
