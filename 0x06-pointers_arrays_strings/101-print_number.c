@@ -28,7 +28,7 @@ void print_number(int n)
 	else if (n < 0)
 	{
 		_putchar('-');
-		n = -n;
+		n = n * -1;
 
 		rec_func(n);
 	}
