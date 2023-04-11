@@ -28,20 +28,29 @@ int _strlen(char *s)
 */
 char *_strdup(char *str)
 {
-	int size = _strlen(str);
-	char *new_str = malloc(sizeof(char) * size);
+	int size;
+	int i;
+	char *new_str;
 
-	if (size < 1 || str == NULL || new_str == NULL)
+	if (str == NULL)
 	{
 		return (NULL);
 	}
 	else
 	{
-		int i;
+		size = _strlen(str);
+		new_str = malloc(sizeof(char) * (size + 1));
 
-		for (i = 0; i < size; i++)
+		if (new_str == NULL)
 		{
-			new_str[i] = str[i];
+			return (NULL);
+		}
+		else
+		{
+			for (i = 0; i < size; i++)
+			{
+				new_str[i] = str[i];
+			}
 		}
 	}
 
