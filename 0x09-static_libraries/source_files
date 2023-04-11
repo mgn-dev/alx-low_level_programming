@@ -1,0 +1,21 @@
+#!/bin/bash
+cp /home/vagrant/alx-low_level_programming/0x02-functions_nested_loops/3-islower.c /home/vagrant/alx-low_level_programming/0x09-static_libraries/3-islower.c
+cp /home/vagrant/alx-low_level_programming/0x02-functions_nested_loops/4-isalpha.c /home/vagrant/alx-low_level_programming/0x09-static_libraries/4-isalpha.c
+cp /home/vagrant/alx-low_level_programming/0x02-functions_nested_loops/6-abs.c /home/vagrant/alx-low_level_programming/0x09-static_libraries/6-abs.c
+cp /home/vagrant/alx-low_level_programming/0x04-more_functions_nested_loops/0-isupper.c /home/vagrant/alx-low_level_programming/0x09-static_libraries/0-isupper.c
+cp /home/vagrant/alx-low_level_programming/0x04-more_functions_nested_loops/1-isdigit.c /home/vagrant/alx-low_level_programming/0x09-static_libraries/1-isdigit.c
+cp /home/vagrant/alx-low_level_programming/0x04-more_functions_nested_loops/_putchar.c /home/vagrant/alx-low_level_programming/0x09-static_libraries/_putchar.c
+cp /home/vagrant/alx-low_level_programming/0x05-pointers_arrays_strings/2-strlen.c /home/vagrant/alx-low_level_programming/0x09-static_libraries/2-strlen.c
+cp /home/vagrant/alx-low_level_programming/0x05-pointers_arrays_strings/3-puts.c /home/vagrant/alx-low_level_programming/0x09-static_libraries/3-puts.c
+cp /home/vagrant/alx-low_level_programming/0x05-pointers_arrays_strings/9-strcpy.c /home/vagrant/alx-low_level_programming/0x09-static_libraries/9-strcpy.c
+cp /home/vagrant/alx-low_level_programming/0x05-pointers_arrays_strings/100-atoi.c /home/vagrant/alx-low_level_programming/0x09-static_libraries/100-atoi.c
+cp /home/vagrant/alx-low_level_programming/0x06-pointers_arrays_strings/0-strcat.c /home/vagrant/alx-low_level_programming/0x09-static_libraries/0-strcat.c
+cp /home/vagrant/alx-low_level_programming/0x06-pointers_arrays_strings/1-strncat.c /home/vagrant/alx-low_level_programming/0x09-static_libraries/1-strncat.c
+cp /home/vagrant/alx-low_level_programming/0x06-pointers_arrays_strings/2-strncpy.c /home/vagrant/alx-low_level_programming/0x09-static_libraries/2-strncpy.c
+cp /home/vagrant/alx-low_level_programming/0x06-pointers_arrays_strings/3-strcmp.c /home/vagrant/alx-low_level_programming/0x09-static_libraries/3-strcmp.c
+cp /home/vagrant/alx-low_level_programming/0x07-pointers_arrays_strings/0-memset.c /home/vagrant/alx-low_level_programming/0x09-static_libraries/0-memset.c
+cp /home/vagrant/alx-low_level_programming/0x07-pointers_arrays_strings/1-memcpy.c /home/vagrant/alx-low_level_programming/0x09-static_libraries/1-memcpy.c
+cp /home/vagrant/alx-low_level_programming/0x07-pointers_arrays_strings/2-strchr.c /home/vagrant/alx-low_level_programming/0x09-static_libraries/2-strchr.c
+cp /home/vagrant/alx-low_level_programming/0x07-pointers_arrays_strings/3-strspn.c /home/vagrant/alx-low_level_programming/0x09-static_libraries/3-strspn.c
+cp /home/vagrant/alx-low_level_programming/0x07-pointers_arrays_strings/4-strpbrk.c /home/vagrant/alx-low_level_programming/0x09-static_libraries/4-strpbrk.c
+cp /home/vagrant/alx-low_level_programming/0x07-pointers_arrays_strings/5-strstr.c /home/vagrant/alx-low_level_programming/0x09-static_libraries/5-strstr.c
