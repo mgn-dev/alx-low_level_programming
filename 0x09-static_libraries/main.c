@@ -7,7 +7,10 @@
 */
 int main(void)
 {
-	_puts("\"At the end of the day, my goal was to be the best"
-		" hacker\"\n\t- Kevin Mitnick");
+	char str1[100] = "\"At the end of the day, my goal was to be the best";
+	char *str2 = " hacker\"\n\t- Kevin Mitnick";
+	char *dest = _strcat(str1, str2);
+
+	_puts(dest);
 	return (0);
 }
