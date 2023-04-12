@@ -19,7 +19,7 @@ int **alloc_grid(int width, int height)
 	}
 	else
 	{
-		matrix = (int **)malloc(sizeof(int **) * height);
+		matrix = (int **)malloc(sizeof(int *) * height);
 
 		if (matrix != NULL)
 		{
