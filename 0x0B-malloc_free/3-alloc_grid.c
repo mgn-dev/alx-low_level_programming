@@ -43,9 +43,7 @@ int **alloc_grid(int width, int height)
 				else
 				{
 					for (j = 0; j < width; j++)
-					{
 						matrix[i][j] = 0;
-					}
 				}
 			}
 		}
