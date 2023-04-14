@@ -66,7 +66,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 				str[i + j] = s2[j];
 			}
 
-			if (size2 > 0)
+			if (n > 0 && size2 > 0)
 				str[i + j] = '\0';
 		}
 
