@@ -52,17 +52,22 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 
 		if (n >= size2)
 		{
-			for (j = i; j < (size1 + size2); j++)
+			for (j = 0; j < size2; j++)
 			{
-				str[j] = s2[j - i];
+				str[i + j] = s2[j];
 			}
+
+			str[i + j] = '\0';
 		}
 		else
 		{
-			for (j = i; j < (size1 + n); j++)
+			for (j = 0; j < n; j++)
 			{
-				str[j] = s2[j - i];
+				str[i + j] = s2[j];
 			}
+
+			if (size2 > 0)
+				str[i + j] = '\0';
 		}
 
 		return (str);
