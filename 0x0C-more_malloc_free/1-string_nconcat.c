@@ -50,24 +50,21 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 			str[i] = s1[i];
 		}
 
-		if (n >= size2)
+		if (n == 0 || size2 == 0)
+		{
+			str[i] = '\0';
+		}
+		else if (n >= size2)
 		{
 			for (j = 0; j < size2; j++)
-			{
 				str[i + j] = s2[j];
-			}
-
 			str[i + j] = '\0';
 		}
 		else
 		{
 			for (j = 0; j < n; j++)
-			{
 				str[i + j] = s2[j];
-			}
-
-			if (n > 0 && size2 > 0)
-				str[i + j] = '\0';
+			str[i + j] = '\0';
 		}
 
 		return (str);
