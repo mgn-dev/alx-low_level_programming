@@ -4,4 +4,5 @@ for file in *.c; do
     gcc -c "${file}"
 done
 
-ar rcs libmy.a *.o
+ar rc liball.a *.o
+ranlib liball.a
