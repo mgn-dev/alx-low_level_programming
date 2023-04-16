@@ -66,13 +66,15 @@ int _atoi(char *s)
 */
 int main(int argc, char *argv[])
 {
-	int num = _atoi(argv[1]), ans = 0;
+	int num = 0, ans = 0;
 
 	if (argc != 2)
 	{
 		printf("Error\n");
 		return (1);
 	}
+
+	num = _atoi(argv[1]);
 
 	if (num < 0)
 	{
