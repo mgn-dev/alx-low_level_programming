@@ -5,4 +5,3 @@ for file in *.c; do
 done
 
 ar rcs libmy.a *.o
-rm *.o
