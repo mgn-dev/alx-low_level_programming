@@ -1,6 +1,26 @@
 #include <stdio.h>
 
 /**
+* _isdigit - checks if a character is a digit
+* @c: the value to check
+*
+* Return: returns 1 for true 0 otherwise
+*/
+int _isdigit(char *c)
+{
+	int i = 0;
+
+	while (c[i] != '\0')
+	{
+		if (c[i] <= '0' || c[i] >= '9')
+			return (0);
+		i++;
+	}
+
+	return (1);
+}
+
+/**
 * _atoi - convert a string to an integer.
 * @s: the string to convert.
 *
@@ -48,7 +68,7 @@ int main(int argc, char *argv[])
 {
 	int num = _atoi(argv[1]), ans = 0;
 
-	if (argc != 2)
+	if (argc != 2 || _isdigit(argv[1]) == 0)
 	{
 		printf("Error\n");
 		return (1);
