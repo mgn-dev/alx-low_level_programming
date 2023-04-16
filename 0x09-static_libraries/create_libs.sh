@@ -6,5 +6,5 @@ for file in *.c; do
     fi
 done
 
-ar rcs libmy.a *.o
+ar rc libmy.a *.o
 rm *.o
