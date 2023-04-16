@@ -68,7 +68,7 @@ int main(int argc, char *argv[])
 {
 	int num = _atoi(argv[1]), ans = 0;
 
-	if (argc != 2 || _isdigit(argv[1]) == 0)
+	if (argc != 2)
 	{
 		printf("Error\n");
 		return (1);
