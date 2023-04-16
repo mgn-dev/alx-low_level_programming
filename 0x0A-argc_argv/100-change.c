@@ -1,20 +1,6 @@
 #include <stdio.h>
 
 /**
-* _isdigit - checks if a character is a digit
-* @c: the value to check
-*
-* Return: returns 1 for true 0 otherwise
-*/
-int _isdigit(int c)
-{
-	if (c >= '0' && c <= '9')
-		return (1);
-	else
-		return (0);
-}
-
-/**
 * _atoi - convert a string to an integer.
 * @s: the string to convert.
 *
@@ -52,36 +38,37 @@ int _atoi(char *s)
 
 
 /**
-* main - add.
+* main - change.
 * @argc: number of arguments.
 * @argv: argument array.
 *
-* Return: addition of numbers.
+* Return: change
 */
 int main(int argc, char *argv[])
 {
-	int ans = 0;
-	int i, j = 0;
+	int num = _atoi(argv[1]), ans = 0;
 
-	if (argc <= 1)
+	if (argc != 2)
 	{
-		printf("0\n");
-		return (0);
+		printf("Error\n");
+		return (1);
 	}
 
-	for (i = 1; i < argc; i++)
+	while (num > 0)
 	{
-		while (argv[i][j] != '\0')
-		{
-			if (_isdigit(argv[i][j]) == 0)
-			{
-				printf("Error\n");
-				return (1);
-			}
-			j++;
-		}
-		j = 0;
-		ans += _atoi(argv[i]);
+		if (num >= 25)
+			num -= 25;
+		else if (num >= 10)
+			num -= 10;
+		else if (num >= 5)
+			num -= 5;
+		else if (num >= 2)
+			num -= 2;
+		else if (num >= 1)
+			num -= 1;
+		else
+			num = 0;
+		ans++;
 	}
 
 	printf("%d\n", ans);
