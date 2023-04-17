@@ -66,14 +66,14 @@ dog_t *new_dog(char *name, float age, char *owner)
 	else
 	{
 		if (name == NULL)
-			dog->name = "(nil)";
+			dog->name = "";
 		else
 			dog->name = _strcpy(name);
 
 		dog->age = age;
 
 		if (owner == NULL)
-			dog->owner = "(nil)";
+			dog->owner = "";
 		else
 			dog->owner = _strcpy(owner);
 
