@@ -55,31 +55,28 @@ char *_strcpy(char *src)
 */
 dog_t *new_dog(char *name, float age, char *owner)
 {
-	dog_t *dog;
+	struct dog *doggo;
 
-	dog = malloc(sizeof(dog_t) + 1);
+	doggo = malloc(sizeof(doggo));
 
-	if (dog == NULL)
+	if (doggo == NULL)
 	{
 		return (NULL);
 	}
 	else
 	{
 		if (name == NULL)
-			dog->name = NULL;
+			doggo->name = NULL;
 		else
-			dog->name = _strcpy(name);
+			doggo->name = _strcpy(name);
 
-		if (age <= 0)
-			dog->age = 0;
-		else
-			dog->age = age;
+		doggo->age = age;
 
 		if (owner == NULL)
-			dog->owner = NULL;
+			doggo->owner = NULL;
 		else
-			dog->owner = _strcpy(owner);
+			doggo->owner = _strcpy(owner);
 
-		return (dog);
+		return (doggo);
 	}
 }
