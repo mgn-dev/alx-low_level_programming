@@ -33,14 +33,14 @@ int _strlen(char *s)
 */
 char *_strcpy(char *src)
 {
-	int size = _strlen(src), i;
+	int size = _strlen(src) + 1, i;
 	char *p = malloc(sizeof(p) * size);
 
 	for (i = 0; i < size; i++)
 	{
 		p[i] = src[i];
 	}
-
+	p[i] = '\0';
 	return (p);
 }
 
