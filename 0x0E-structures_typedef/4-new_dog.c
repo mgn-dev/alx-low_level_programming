@@ -40,7 +40,7 @@ char *_strcpy(char *src)
 	{
 		p[i] = src[i];
 	}
-	p[i] = '\0';
+
 	return (p);
 }
 
