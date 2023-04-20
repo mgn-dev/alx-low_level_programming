@@ -19,9 +19,8 @@ int (*get_op_func(char *s))(int a, int b)
 		{"%", op_mod},
 		{NULL, NULL}
 	};
-	int i;
+	int i = 0;
 
-	i = 0;
 	while (s != NULL && ops[i].op != NULL && ops[i].op[0] != s[0] && i < 6)
 		i++;
 
