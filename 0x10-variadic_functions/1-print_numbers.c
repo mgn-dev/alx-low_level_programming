@@ -20,9 +20,12 @@ void print_numbers(const char *sep, const unsigned int n, ...)
 	for (i = 0; i < n; i++)
 	{
 		printf("%d", va_arg(ap, int));
-		(i < (n - 1)) ? ((sep != NULL) ? printf("%s ", sep) :
-		printf(" ")) : printf("\n");
+		if (sep && i < (n - 1))
+			printf("%s", sep);
+
 	}
+
+	printf("\n");
 
 	va_end(ap);
 }
