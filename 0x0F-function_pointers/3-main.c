@@ -14,7 +14,7 @@ int main(int argc, char *argv[])
 	if (argc < 4)
 	{
 		printf("Error\n");
-		return (98);
+		exit(98);
 	}
 	else
 	{
@@ -29,14 +29,14 @@ int main(int argc, char *argv[])
 			op[0] != '%')
 		{
 			printf("Error\n");
-			return (99);
+			exit(99);
 		}
 		else
 		{
 			if ((second_int == 0 && op[0] == '/') || (second_int == 0 && op[0] == '%'))
 			{
 				printf("Error\n");
-				return (100);
+				exit(100);
 			}
 			else
 			{
