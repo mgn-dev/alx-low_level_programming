@@ -10,7 +10,8 @@
 */
 int main(int argc, char *argv[])
 {
-	int bytes, i, c;
+	int bytes, i;
+	char c;
 	FILE *fp;
 
 	if (argc != 2)
