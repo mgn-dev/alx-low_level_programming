@@ -7,11 +7,11 @@
 * @argc: number of arguments.
 * @argv: argument array.
 *
-* Return: addition of numbers.
+* Return: Always 0.
 */
 int main(int argc, char *argv[])
 {
-	if (argc < 4)
+	if (argc != 4)
 	{
 		printf("Error\n");
 		exit(98);
@@ -21,6 +21,8 @@ int main(int argc, char *argv[])
 		int first_int = atoi(argv[1]);
 		int second_int = atoi(argv[3]);
 		char *op = argv[2];
+		int (*ptr)(int a, int b);
+		int result;
 
 		if (op[0] != '+' &&
 			op[0] != '-' &&
@@ -31,22 +33,17 @@ int main(int argc, char *argv[])
 			printf("Error\n");
 			exit(99);
 		}
-		else
+
+		if ((second_int == 0 && op[0] == '/') || (second_int == 0 && op[0] == '%'))
 		{
-			if ((second_int == 0 && op[0] == '/') || (second_int == 0 && op[0] == '%'))
-			{
-				printf("Error\n");
-				exit(100);
-			}
-			else
-			{
-				int (*ptr)(int a, int b);
-
-				ptr = (get_op_func(op));
-				printf("%d\n", ptr(first_int, second_int));
-
-				return (0);
-			}
+			printf("Error\n");
+			exit(100);
 		}
+
+		ptr = get_op_func(op);
+		result = ptr(first_int, second_int);
+		printf("%d\n", result);
+
+		return (0);
 	}
 }

@@ -27,7 +27,6 @@ int (*get_op_func(char *s))(int a, int b)
 
 	if (i >= 5 || ops[i].f == NULL)
 		return (NULL);
-	else
-		return (ops[i].f);
 
+	return (ops[i].f);
 }
