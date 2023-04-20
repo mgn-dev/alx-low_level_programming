@@ -12,7 +12,7 @@ void print_numbers(const char *sep, const unsigned int n, ...)
 	va_list ap;
 	unsigned int i;
 
-	if (n == 0)
+	if (n <= 0)
 		return;
 
 	va_start(ap, n);
