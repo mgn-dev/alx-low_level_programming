@@ -12,7 +12,7 @@ int main(int argc, char *argv[])
 {
 	int bytes, i;
 	char c;
-	int (*main_ptr)(int, char*arr[]);
+	int (*main_ptr)(int, char *arr[]);
 
 	if (argc != 2)
 	{
@@ -32,7 +32,7 @@ int main(int argc, char *argv[])
 
 	for (i = 0; i < bytes; i++)
 	{
-		printf("%02x", *(unsigned char*)main_ptr);
+		printf("%02x", *(unsigned char *)main_ptr);
 		if (i < (bytes - 1))
 			printf(" ");
 		main_ptr++;
