@@ -35,7 +35,7 @@ int main(int argc, char *argv[])
 		c = fgetc(fp);
 
 		if (c != EOF && i < bytes)
-			printf("%x", c);
+			printf("%02x", c);
 		if (i < (bytes - 1))
 			printf(" ");
 		i++;
