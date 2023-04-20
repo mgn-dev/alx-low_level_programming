@@ -24,16 +24,6 @@ int main(int argc, char *argv[])
 		int (*ptr)(int a, int b);
 		int result;
 
-		if (op[0] != '+' &&
-			op[0] != '-' &&
-			op[0] != '*' &&
-			op[0] != '/' &&
-			op[0] != '%')
-		{
-			printf("Error\n");
-			exit(99);
-		}
-
 		if ((second_int == 0 && op[0] == '/') || (second_int == 0 && op[0] == '%'))
 		{
 			printf("Error\n");
@@ -41,6 +31,13 @@ int main(int argc, char *argv[])
 		}
 
 		ptr = get_op_func(op);
+
+		if (ptr == NULL)
+		{
+			printf("Error\n");
+			exit(99);
+		}
+
 		result = ptr(first_int, second_int);
 		printf("%d\n", result);
 
