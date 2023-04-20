@@ -26,7 +26,6 @@ void print_numbers(const char *sep, const unsigned int n, ...)
 
 	}
 
-	printf("\n");
-
 	va_end(ap);
+	printf("\n");
 }
