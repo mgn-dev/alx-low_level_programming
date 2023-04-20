@@ -22,7 +22,11 @@ int main(int argc, char *argv[])
 		int second_int = atoi(argv[3]);
 		char *op = argv[2];
 
-		if (op[0] != '+' && op[0] != '-' && op[0] != '*' && op[0] != '/' && op[0] != '%')
+		if (op[0] != '+' &&
+			op[0] != '-' &&
+			op[0] != '*' &&
+			op[0] != '/' &&
+			op[0] != '%')
 		{
 			printf("Error\n");
 			return (99);
@@ -38,7 +42,7 @@ int main(int argc, char *argv[])
 			{
 				int (*ptr)(int a, int b);
 
-				ptr = (*get_op_func(op));
+				ptr = (get_op_func(op));
 				printf("%d\n", ptr(first_int, second_int));
 
 				return (0);
