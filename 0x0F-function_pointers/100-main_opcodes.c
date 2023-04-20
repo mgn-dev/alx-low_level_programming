@@ -34,12 +34,12 @@ int main(int argc, char *argv[])
 	do {
 		c = fgetc(fp);
 
-		if (c != EOF && i < bytes)
+		if (i < bytes)
 			printf("%02x", c);
 		if (i < (bytes - 1))
 			printf(" ");
 		i++;
-	} while (c != EOF && i < bytes);
+	} while (i < bytes);
 
 	printf("\n");
 
