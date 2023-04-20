@@ -11,36 +11,35 @@
 */
 int main(int argc, char *argv[])
 {
+	int first, second, result, (*ptr)(int a, int b);
+	char *op;
+
 	if (argc != 4)
 	{
 		printf("Error\n");
 		exit(98);
 	}
-	else
+
+	first = atoi(argv[1]);
+	second = atoi(argv[3]);
+	op = argv[2];
+
+	if (second == 0 && (op[0] == '/' || op[0] == '%') && op[1] != '\0')
 	{
-		int first_int = atoi(argv[1]);
-		int second_int = atoi(argv[3]);
-		char *op = argv[2];
-		int (*ptr)(int a, int b);
-		int result;
-
-		if ((second_int == 0 && op[0] == '/') || (second_int == 0 && op[0] == '%'))
-		{
-			printf("Error\n");
-			exit(100);
-		}
-
-		ptr = get_op_func(op);
-
-		if (ptr == NULL)
-		{
-			printf("Error\n");
-			exit(99);
-		}
-
-		result = ptr(first_int, second_int);
-		printf("%d\n", result);
-
-		return (0);
+		printf("Error\n");
+		exit(100);
 	}
+
+	ptr = get_op_func(op);
+
+	if (ptr == NULL)
+	{
+		printf("Error\n");
+		exit(99);
+	}
+
+	result = ptr(first, second);
+	printf("%d\n", result);
+
+	return (0);
 }
