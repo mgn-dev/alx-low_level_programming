@@ -28,9 +28,7 @@ int main(int argc, char *argv[])
 	}
 
 	bytes = atoi(argv[1]);
-
 	fp = fopen(__FILE__, "r");
-
 	i = 0;
 
 	do {
@@ -42,6 +40,8 @@ int main(int argc, char *argv[])
 	} while (i < bytes);
 
 	printf("\n");
+
+	fclose(fp);
 
 	return (0);
 }
