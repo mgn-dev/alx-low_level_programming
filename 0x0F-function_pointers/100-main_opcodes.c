@@ -19,7 +19,9 @@ int main(int argc, char *argv[])
 		exit(1);
 	}
 
-	if (argv[1][0] == '-')
+	bytes = atoi(argv[1]);
+
+	if (bytes < 0)
 	{
 		printf("Error\n");
 		exit(2);
