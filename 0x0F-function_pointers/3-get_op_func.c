@@ -21,10 +21,10 @@ int (*get_op_func(char *s))(int a, int b)
 	};
 	int i = 0;
 
-	while (s != NULL && ops[i].op != NULL && ops[i].op != s)
+	while (s != NULL && ops[i].op != NULL && ops[i].op[0] != s[0])
 		i++;
 
-	if (i < 6 && s == ops[i].op && ops[i].f != NULL)
+	if (ops[i].op[0] == s[0] && ops[i].f != NULL)
 		return (ops[i].f);
 
 	return (NULL);
