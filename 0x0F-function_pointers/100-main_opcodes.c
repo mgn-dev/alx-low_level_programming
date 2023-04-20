@@ -12,7 +12,7 @@ int main(int argc, char *argv[])
 {
 	int bytes, i;
 	char c;
-	FILE *fp;
+	int (*main_ptr)(int, char*arr[]);
 
 	if (argc != 2)
 	{
@@ -28,21 +28,17 @@ int main(int argc, char *argv[])
 		exit(2);
 	}
 
-	bytes = atoi(argv[1]);
-	fp = fopen(__FILE__, "r");
-	i = 0;
+	main_ptr = main;
 
-	do {
-		c = fgetc(fp);
-
-		if (i < bytes)
-			printf("%02x ", c);
-		i++;
-	} while (i < bytes);
+	for (i = 0; i < bytes; i++)
+	{
+		printf("%02x", *(unsigned char*)main_ptr);
+		if (i < (bytes - 1))
+			printf(" ");
+		main_ptr++;
+	}
 
 	printf("\n");
-
-	fclose(fp);
 
 	return (0);
 }
