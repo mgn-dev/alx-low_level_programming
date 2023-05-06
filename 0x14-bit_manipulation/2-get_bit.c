@@ -1,5 +1,4 @@
 #include "main.h"
-#include <limits.h>
 
 /**
 * get_bit - function that returns the value of a bit at a given index.
