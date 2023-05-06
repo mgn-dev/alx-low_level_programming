@@ -10,8 +10,8 @@
 */
 int get_bit(unsigned long int n, unsigned int index)
 {
-	unsigned int len = 0, i = 0;
-	unsigned long int mask = 1 << index;
+	unsigned int len = 0;
+	unsigned long int i, mask = 1 << index;
 
 	for (i = n; i > 0; len++)
 		i /= 2;
