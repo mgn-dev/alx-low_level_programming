@@ -12,11 +12,11 @@ int get_bit(unsigned long int n, unsigned int index)
 	unsigned int len = 0;
 	unsigned long int i, mask = 1 << index;
 
-	for (i = n; i > 0; len++)
-		i /= 2;
-
 	if (n == 0)
 		return (0);
+
+	for (i = n; i > 0; len++)
+		i /= 2;
 
 	if (index >= len)
 		return (-1);
