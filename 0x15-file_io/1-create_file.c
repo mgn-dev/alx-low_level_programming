@@ -22,16 +22,13 @@ int create_file(const char *filename, char *text_content)
 		return (-1);
 
 	if (text_content != NULL)
-		return (-1);
+	{
+		while (text_content[len] != '\0')
+			len++;
 
-	while (text_content[len] != '\0')
-		len++;
+		if (write(file_des, text_content, len + 1) > -1)
+			return (1);
+	}
 
-	if (len == 0)
-		return (1);
-
-	if (write(file_des, text_content, len + 1) == -1)
-		return (-1);
-	else
-		return (1);
+	return (-1);
 }
