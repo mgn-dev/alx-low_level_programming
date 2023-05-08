@@ -13,8 +13,11 @@
 ssize_t read_textfile(const char *filename, size_t letters)
 {
 	int file_des;
-	ssize_t nr = 0;
+	ssize_t nr, nw;
 	char *buf_ptr;
+
+	if (filename == NULL)
+		return (0);
 
 	buf_ptr = malloc(sizeof(char) * letters + 1);
 
@@ -23,14 +26,17 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	if (file_des == -1)
 		return (0);
 
-	nr += read(file_des, buf_ptr, letters);
+	nr = read(file_des, buf_ptr, letters);
 
 	if (nr == -1)
 		return (0);
 
-	write(STDOUT_FILENO, buf_ptr, letters + 1);
+	nw = write(STDOUT_FILENO, buf_ptr, nr);
+
+	if (nw == -1)
+		return (0);
 
 	close(file_des);
 
-	return (nr);
+	return (nw);
 }
