@@ -60,11 +60,11 @@ int main(int ac, char **av)
 
 	if (ac != 3)
 	{
-		dprintf(STDERR_FILENO, "Usage: %s file_from file_to \n", av[0]);
+		dprintf(STDERR_FILENO, "Usage: %s file_from file_to\n", av[0]);
 		exit(97);
 	}
 
-	fd_r = open(av[1], O_RDONLY);
+	fd_r = open(av[1], O_RDONLY | O_EXCL);
 	read_failed(fd_r, av[1]);
 
 	fd_w = open(av[2], O_CREAT | O_TRUNC | O_WRONLY, 0664);
