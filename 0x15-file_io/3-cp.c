@@ -3,7 +3,6 @@
 #include <fcntl.h>
 #include "main.h"
 
-#define BUFFASIZE 1024
 /**
  * write_failed - exits main when operations fail.
  * @ret: input value to test.
@@ -56,7 +55,7 @@ void close_failed(int ret, int fd)
 int main(int ac, char **av)
 {
 	int fd_r, fd_w, cv;
-	char buffa[BUFFASIZE];
+	char buffa[1024];
 	ssize_t nr, nw;
 
 	if (ac != 3)
@@ -68,11 +67,11 @@ int main(int ac, char **av)
 	fd_r = open(av[1], O_RDONLY | O_EXCL);
 	read_failed(fd_r, av[1]);
 
-	fd_w = open(av[2], O_TRUNC | O_WRONLY, 0664);
+	fd_w = open(av[2], O_CREAT | O_TRUNC | O_WRONLY, 0664);
 	write_failed(fd_w, av[2]);
 
 	do {
-		nr = read(fd_r, buffa, BUFFASIZE);
+		nr = read(fd_r, buffa, sizeof(buffa));
 		read_failed(nr, av[1]);
 		nw = write(fd_w, buffa, (size_t)nr);
 		write_failed(nw, av[2]);
