@@ -60,18 +60,12 @@ int main(int ac, char **av)
 
 	if (ac != 3)
 	{
-		dprintf(2, "Usage: %s file_from file_to\n", av[0]);
+		dprintf(2, "Usage: %s file_from file_to \n", av[0]);
 		exit(97);
 	}
 
-	if (av[1] == NULL)
-		read_failed(-1, av[1]);
-
 	fd_r = open(av[1], O_RDONLY | O_EXCL);
 	read_failed(fd_r, av[1]);
-
-	if (av[2] == NULL)
-		write_failed(-1, av[2]);
 
 	fd_w = open(av[2], O_CREAT | O_TRUNC | O_WRONLY, 0664);
 	write_failed(fd_w, av[2]);
