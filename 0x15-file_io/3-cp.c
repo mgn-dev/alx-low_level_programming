@@ -6,12 +6,12 @@
 #define BUFFASIZE 1024
 /**
  * write_failed - exits main when operations fail.
- * @fd: file descriptor.
+ * @ret: input value to test.
  * @s: input string.
 */
-void write_failed(int fd, char *s)
+void write_failed(int ret, char *s)
 {
-	if (fd == -1)
+	if (ret == -1)
 	{
 		dprintf(2, "Error: Can't write to %s\n", s);
 		exit(99);
@@ -20,12 +20,12 @@ void write_failed(int fd, char *s)
 
 /**
  * read_failed - exits main when operations fail.
- * @fd: file descriptor.
+ * @ret: input value to test.
  * @s: input string.
 */
-void read_failed(int fd, char *s)
+void read_failed(int ret, char *s)
 {
-	if (fd == -1)
+	if (ret == -1)
 	{
 		dprintf(2, "Error: Can't read from file %s\n", s);
 		exit(98);
@@ -34,13 +34,13 @@ void read_failed(int fd, char *s)
 
 /**
  * close_failed - exits main when operations fail.
- * @fd: file descriptor.
+ * @ret: input value to test.
 */
-void close_failed(int fd)
+void close_failed(int ret)
 {
-	if (fd == -1)
+	if (ret == -1)
 	{
-		dprintf(2, "Error: Can't close fd %i\n", fd);
+		dprintf(2, "Error: Can't close fd %i\n", ret);
 		exit(100);
 	}
 }
@@ -64,25 +64,24 @@ int main(int ac, char **av)
 		exit(97);
 	}
 
-	fd_r = open(av[1], O_RDONLY | O_EXCL);
+	if (av[1] == NULL)
+		read_failed(-1, av[1]);
 
+	fd_r = open(av[1], O_RDONLY | O_EXCL);
 	read_failed(fd_r, av[1]);
 
-	fd_w = open(av[2], O_CREAT | O_TRUNC | O_WRONLY, 0664);
+	if (av[2] == NULL)
+		write_failed(-1, av[2]);
 
+	fd_w = open(av[2], O_CREAT | O_TRUNC | O_WRONLY, 0664);
 	write_failed(fd_w, av[2]);
 
 	do {
-
-		nr = read(fd_r, buffa, sizeof(BUFFASIZE));
-
+		nr = read(fd_r, buffa, BUFFASIZE);
 		read_failed(nr, av[1]);
-
 		nw = write(fd_w, buffa, nr);
-
 		write_failed(nw, av[2]);
-
-	} while (nr != 0);
+	} while (nr > 0);
 
 	cv = close(fd_r);
 	close_failed(cv);
