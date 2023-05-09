@@ -64,7 +64,7 @@ int main(int ac, char **av)
 		exit(97);
 	}
 
-	fd_r = open(av[1], O_RDONLY | O_EXCL);
+	fd_r = open(av[1], O_RDONLY);
 	read_failed(fd_r, av[1]);
 
 	fd_w = open(av[2], O_CREAT | O_TRUNC | O_WRONLY, 0664);
