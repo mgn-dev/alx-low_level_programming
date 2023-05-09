@@ -35,12 +35,13 @@ void read_failed(int ret, char *s)
 /**
  * close_failed - exits main when operations fail.
  * @ret: input value to test.
+ * @fd: file descriptor.
 */
-void close_failed(int ret)
+void close_failed(int ret, int fd)
 {
 	if (ret == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %i\n", ret);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %i\n", fd);
 		exit(100);
 	}
 }
@@ -78,10 +79,10 @@ int main(int ac, char **av)
 	} while (nr > 0);
 
 	cv = close(fd_r);
-	close_failed(cv);
+	close_failed(cv, fd_r);
 
 	cv = close(fd_w);
-	close_failed(cv);
+	close_failed(cv, fd_w);
 
 	return (0);
 }
