@@ -27,7 +27,7 @@ void read_failed(int ret, char *s)
 {
 	if (ret == -1)
 	{
-		dprintf(2, "Error: Can't read from file%s\n", s);
+		dprintf(2, "Error: Can't read from file %s\n", s);
 		exit(98);
 	}
 }
@@ -40,7 +40,7 @@ void close_failed(int ret)
 {
 	if (ret == -1)
 	{
-		dprintf(2, "Error: Can't close fd%i\n", ret);
+		dprintf(2, "Error: Can't close fd %i\n", ret);
 		exit(100);
 	}
 }
