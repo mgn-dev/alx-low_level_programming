@@ -13,7 +13,7 @@ void write_failed(int ret, char *s)
 {
 	if (ret == -1)
 	{
-		dprintf(2, "Error: Can't write to %s\n", s);
+		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", s);
 		exit(99);
 	}
 }
@@ -27,7 +27,7 @@ void read_failed(int ret, char *s)
 {
 	if (ret == -1)
 	{
-		dprintf(2, "Error: Can't read from file %s\n", s);
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", s);
 		exit(98);
 	}
 }
@@ -40,7 +40,7 @@ void close_failed(int ret)
 {
 	if (ret == -1)
 	{
-		dprintf(2, "Error: Can't close fd %i\n", ret);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %i\n", ret);
 		exit(100);
 	}
 }
@@ -60,7 +60,7 @@ int main(int ac, char **av)
 
 	if (ac != 3)
 	{
-		dprintf(2, "Usage: %s file_from file_to \n", av[0]);
+		dprintf(STDERR_FILENO, "Usage: %s file_from file_to \n", av[0]);
 		exit(97);
 	}
 
