@@ -67,7 +67,7 @@ int main(int ac, char **av)
 	fd_r = open(av[1], O_RDONLY);
 	read_failed(fd_r, av[1]);
 
-	fd_w = open(av[2], O_CREAT | O_TRUNC | O_WRONLY, 0664);
+	fd_w = open(av[2], O_CREAT | O_TRUNC | O_WRONLY, 0644);
 	write_failed(fd_w, av[2]);
 
 	do {
