@@ -68,13 +68,13 @@ int main(int ac, char **av)
 	fd_r = open(av[1], O_RDONLY | O_EXCL);
 	read_failed(fd_r, av[1]);
 
-	fd_w = open(av[2], O_CREAT | O_TRUNC | O_WRONLY | O_APPEND, 0664);
+	fd_w = open(av[2], O_CREAT | O_TRUNC | O_WRONLY, 0664);
 	write_failed(fd_w, av[2]);
 
 	do {
 		nr = read(fd_r, buffa, BUFFASIZE);
 		read_failed(nr, av[1]);
-		nw = write(fd_w, buffa, nr);
+		nw = write(fd_w, buffa, (size_t)nr);
 		write_failed(nw, av[2]);
 	} while (nr > 0);
 
