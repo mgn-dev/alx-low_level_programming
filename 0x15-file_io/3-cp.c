@@ -74,7 +74,7 @@ int main(int ac, char **av)
 
 	do {
 
-		nr = read(fd_r, buffa, BUFFASIZE);
+		nr = read(fd_r, buffa, sizeof(BUFFASIZE));
 
 		read_failed(nr, av[1]);
 
