@@ -72,7 +72,7 @@ int main(int ac, char **av)
 	write_failed(fd_w, av[2]);
 
 	do {
-		nr = read(fd_r, buffa, BUFFASIZE);
+		nr = read(fd_r, buffa, BUFFASIZE - 1);
 		read_failed(nr, av[1]);
 		nw = write(fd_w, buffa, (size_t)nr);
 		write_failed(nw, av[2]);
