@@ -2,6 +2,26 @@
 #include <stdio.h>
 
 /**
+* dlistint_len - function that returns the number of elements
+* in a linked dlistint_t list.
+* @h: pointer to the head of dlistint_t list.
+*
+* Return: number of elements.
+*/
+size_t dlistint_len(const dlistint_t *h)
+{
+	int size = 0;
+
+	while (h != NULL)
+	{
+		h = h->next;
+		size++;
+	}
+
+	return (size);
+}
+
+/**
  * delete_dnodeint_at_index - function that deletes the node at
  * index of a dlistint_t linked list.
  * @head: pointer to the node with prev = null.
@@ -14,7 +34,7 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 	dlistint_t *temp = NULL;
 	unsigned int i;
 
-	if (*head == NULL)
+	if (*head == NULL || index >= dlistint_len(*head))
 		return (-1);
 
 	temp = *head;
