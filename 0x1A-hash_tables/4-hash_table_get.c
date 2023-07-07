@@ -23,5 +23,19 @@ char *hash_table_get(const hash_table_t *ht, const char *key)
 	if (ht->array[index] == NULL)
 		return (NULL);
 
-	return (ht->array[index]->value);
+	if (strcmp(ht->array[index]->key, key) == 0)
+	{
+		return (ht->array[index]->value);
+	}
+	else
+	{
+		while (ht->array[index] != NULL)
+		{
+			if (strcmp(ht->array[index]->key, key) == 0)
+				return (ht->array[index]->value);
+			ht->array[index] = ht->array[index]->next;
+		}
+	}
+
+	return (NULL);
 }
