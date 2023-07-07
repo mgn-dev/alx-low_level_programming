@@ -20,6 +20,8 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		return (0);
 	if (value == NULL || strcmp(value, "") == 0)
 		return (0);
+    if (ht->array == NULL || ht->size == 0)
+        return (0);
 
 	index = key_index((const unsigned char *)key, ht->size);
 	new_node = malloc(sizeof(hash_node_t));
