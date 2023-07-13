@@ -264,7 +264,7 @@ void shash_table_print(const shash_table_t *ht)
 			printf("'%s': '%s'", chain_trv->key, chain_trv->value);
 			if (chain_trv->next != NULL)
 				printf(", ");
-			chain_trv = trv->next;
+			chain_trv = chain_trv->next;
 		} while (chain_trv != NULL);
 
 		if (trv->snext != NULL)
