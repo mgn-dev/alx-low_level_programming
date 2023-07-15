@@ -102,7 +102,7 @@ void mid_insert(shash_node_t **head, shash_node_t **tail, shash_node_t *node)
 		(*head)->sprev = node;
 		*head = node;
 	}
-	else if (trv->snext == NULL)
+	else if (trv->snext == NULL && strcmp(node->key, trv->key) > 0)
 	{
 		node->sprev = *tail;
 		(*tail)->snext = node;
@@ -114,10 +114,13 @@ void mid_insert(shash_node_t **head, shash_node_t **tail, shash_node_t *node)
 		trv->sprev->snext = node;
 		node->snext = trv;
 		trv->sprev = node;
-
-		while ((*tail)->snext != NULL)
-			*tail = (*tail)->snext;
 	}
+
+	while ((*tail)->snext != NULL)
+		*tail = (*tail)->snext;
+
+	while ((*head)->sprev != NULL)
+		*head = (*head)->sprev;
 }
 
 /**

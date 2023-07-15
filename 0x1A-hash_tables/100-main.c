@@ -14,22 +14,22 @@ int main(void)
 
 	ht = shash_table_create(1024);
 
-	shash_table_set(ht, "Australia", "fun");
-	shash_table_set(ht, "Bahrain", "fun");
-	shash_table_set(ht, "Brazil", "fun");
-	shash_table_set(ht, "Canada", "fun");
-	shash_table_set(ht, "China", "fun");
-	shash_table_set(ht, "France", "fun");
-	shash_table_set(ht, "Germany", "fun");
-	shash_table_set(ht, "Iceland", "fun");
-	shash_table_set(ht, "Japan", "fun");
-	shash_table_set(ht, "Russia", "fun");
-	shash_table_set(ht, "Spain", "fun");
-	shash_table_set(ht, "Sweden", "fun");
-	shash_table_set(ht, "UK", "fun");
-	shash_table_set(ht, "USA", "fun");
-	shash_table_print(ht);
+	shash_table_set(ht, "Australia", "Canberra");
+	shash_table_set(ht, "Bahrain", "Manama");
+	shash_table_set(ht, "Brazil", "Brasilia");
+	shash_table_set(ht, "Germany", "Berlin");
+	shash_table_set(ht, "USA", "Washington");
+	shash_table_set(ht, "Iceland", "Reykjavik");
+	shash_table_set(ht, "Japan", "Tokyo");
+	shash_table_set(ht, "Russia", "Moscow");
+	shash_table_set(ht, "Spain", "Madrid");
+	shash_table_set(ht, "Sweden", "Stockholm");
+	shash_table_set(ht, "UK", "London");
+	shash_table_set(ht, "Canada", "Ottawa");
+	shash_table_set(ht, "China", "Beijing");
+	shash_table_set(ht, "France", "Paris");
 
+	shash_table_print(ht);
 
 	shash_table_delete(ht);
 	return (EXIT_SUCCESS);
