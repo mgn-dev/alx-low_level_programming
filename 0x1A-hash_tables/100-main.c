@@ -12,27 +12,24 @@ int main(void)
 {
 	shash_table_t *ht;
 
-	ht = shash_table_create(30);
+	ht = shash_table_create(1024);
 
-	shash_table_set(ht, "c", "fun");
-	shash_table_print(ht);
-    shash_table_set(ht, "python", "awesome");
-	shash_table_print(ht);
-    shash_table_set(ht, "Bob", "and Kris love asm");
-	shash_table_print(ht);
-    shash_table_set(ht, "N", "queens");
-	shash_table_print(ht);
-	ht_print_bucket(ht);
-    shash_table_set(ht, "Asterix", "Obelix");
+	shash_table_set(ht, "Australia", "fun");
+	shash_table_set(ht, "Bahrain", "fun");
+	shash_table_set(ht, "Brazil", "fun");
+	shash_table_set(ht, "Canada", "fun");
+	shash_table_set(ht, "China", "fun");
+	shash_table_set(ht, "France", "fun");
+	shash_table_set(ht, "Germany", "fun");
+	shash_table_set(ht, "Iceland", "fun");
+	shash_table_set(ht, "Japan", "fun");
+	shash_table_set(ht, "Russia", "fun");
+	shash_table_set(ht, "Spain", "fun");
+	shash_table_set(ht, "Sweden", "fun");
+	shash_table_set(ht, "UK", "fun");
+	shash_table_set(ht, "USA", "fun");
 	shash_table_print(ht);
 
-    /*shash_table_set(ht, "Betty", "Cool");
-	shash_table_print(ht);
-    shash_table_set(ht, "98", "Battery Street");
-
-	printf("%s\n", shash_table_get(ht, "98"));*/
-
-	ht_print_bucket(ht);
 
 	shash_table_delete(ht);
 	return (EXIT_SUCCESS);

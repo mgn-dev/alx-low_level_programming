@@ -306,7 +306,7 @@ void shash_table_print_rev(const shash_table_t *ht)
 }
 
 /**
- * hash_table_print - function that prints a hash table
+ * ht_print_bucket - function that prints a hash table
  * according to bucket.
  * @ht: the hash table.
  *
