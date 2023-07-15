@@ -247,7 +247,6 @@ char *shash_table_get(const shash_table_t *ht, const char *key)
 void shash_table_print(const shash_table_t *ht)
 {
 	shash_node_t *trv = NULL;
-	shash_node_t *chain_trv = NULL;
 
 	if (ht == NULL)
 		return;
@@ -258,14 +257,7 @@ void shash_table_print(const shash_table_t *ht)
 
 	while (trv != NULL)
 	{
-		chain_trv = trv;
-
-		do {
-			printf("'%s': '%s'", chain_trv->key, chain_trv->value);
-			if (chain_trv->next != NULL)
-				printf(", ");
-			chain_trv = chain_trv->next;
-		} while (chain_trv != NULL);
+		printf("'%s': '%s'", trv->key, trv->value);
 
 		if (trv->snext != NULL)
 			printf(", ");
@@ -310,6 +302,42 @@ void shash_table_print_rev(const shash_table_t *ht)
 		trv = trv->sprev;
 	}
 
+	printf("}\n");
+}
+
+/**
+ * hash_table_print - function that prints a hash table
+ * according to bucket.
+ * @ht: the hash table.
+ *
+ */
+void ht_print_bucket(const shash_table_t *ht)
+{
+	unsigned long int i, f = 0;
+	shash_node_t *trv = NULL;
+
+	if (ht == NULL)
+		return;
+
+	printf("{");
+	for (i = 0; i < ht->size; i++)
+	{
+		if (ht->array[i] != NULL)
+		{
+			if (f > 0)
+				printf(", ");
+
+			trv = ht->array[i];
+
+			do {
+				printf("'%s': '%s'", trv->key, trv->value);
+				if (trv->next != NULL)
+					printf(", ");
+				trv = trv->next;
+				f++;
+			} while (trv != NULL);
+		}
+	}
 	printf("}\n");
 }
 
