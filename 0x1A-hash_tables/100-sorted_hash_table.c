@@ -279,7 +279,6 @@ void shash_table_print(const shash_table_t *ht)
 void shash_table_print_rev(const shash_table_t *ht)
 {
 	shash_node_t *trv = NULL;
-	shash_node_t *chain_trv = NULL;
 
 	if (ht == NULL)
 		return;
@@ -290,14 +289,7 @@ void shash_table_print_rev(const shash_table_t *ht)
 
 	while (trv != NULL)
 	{
-		chain_trv = trv;
-
-		do {
-			printf("'%s': '%s'", chain_trv->key, chain_trv->value);
-			if (chain_trv->next != NULL)
-				printf(", ");
-			chain_trv = trv->next;
-		} while (chain_trv != NULL);
+		printf("'%s': '%s'", trv->key, trv->value);
 
 		if (trv->sprev != NULL)
 			printf(", ");
