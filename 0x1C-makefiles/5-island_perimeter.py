@@ -22,5 +22,7 @@ def island_perimeter(grid):
 
             if p == 4:
                 return 0
+            else
+                parameter += p
 
     return parameter
