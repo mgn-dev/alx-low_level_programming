@@ -19,10 +19,6 @@ def island_perimeter(grid):
                 p += 1
             if ((y + 1 < ny) and grid[x][y] == 1 and grid[x][y+1] == 0):
                 p += 1
-
-            if p == 4:
-                return 0
-            else:
-                parameter += p
+            parameter += p
 
     return parameter
