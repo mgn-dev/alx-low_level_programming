@@ -6,6 +6,10 @@ def island_perimeter(grid):
     """Returns the perimeter of the island described in grid."""
     parameter = 0
     nx = len(grid)
+
+    if nx == 0 and type(grid) != type([]):
+        return 0
+
     for x in range(nx):
         ny = len(grid[x])
         for y in range(ny):
