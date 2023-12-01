@@ -1,10 +1,15 @@
 CC = gcc
-SRC = main.c school.c m.h
+SRC = main.c school.c
 OBJ = $(SRC:.c=.o)
 NAME = school
 CFLAGS = -Wall -Werror -Wextra -pedantic
 
-all: $(OBJ)
+# Check if m.h exists, and fail if not
+ifeq ($(wildcard m.h),)
+$(error "m.h not found")
+endif
+
+all: $(OBJ) m.h
 	$(CC) $(OBJ) -o $(NAME)
 
 .PHONY: clean oclean fclean re
