@@ -13,6 +13,7 @@ size_t min(size_t a, size_t b)
 	return ((a < b) ? a : b);
 }
 
+
 /**
  * jump_search - searches for a value in an array of integers
  * using the jump search algorithm.
